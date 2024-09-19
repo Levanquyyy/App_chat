@@ -15,7 +15,7 @@ dotenv.config();
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 1234;
 const DATABASE_URL = process.env.DATABASE_URL;
 
 // ... các middleware khác ...
