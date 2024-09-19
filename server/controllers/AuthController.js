@@ -39,8 +39,7 @@ export const signup = async (req, res) => {
     });
     res.cookie("jwt", createToken(name, user._id), {
       maxAge,
-      secure: true,
-      sameSite: "None",
+
     });
     return res.status(201).json({
       user: {
@@ -71,8 +70,7 @@ export const signin = async (req, res) => {
     }
     res.cookie("jwt", createToken(name, user._id), {
       maxAge,
-      secure: true,
-      sameSite: "None",
+
     });
     return res.status(200).json({
       user: {
@@ -175,7 +173,7 @@ export const uploadAvatar = [
 ];
 export const logout = (req, res) => {
   try {
-    res.cookie("jwt", "", { maxAge: 1, secure: true, sameSite: "None" });
+    res.cookie("jwt", "", { maxAge: 1, });
     return res.status(200).json({ message: "Logout successful" });
   } catch (error) {
     console.error(error);
